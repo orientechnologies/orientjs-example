@@ -77,8 +77,8 @@ const listenForMessage = pool => {
             { params: msg }
           )
           .one();
-      } catch (ex) {
-        console.log(ex);
+      } catch (err) {
+        console.log(err);
       }
       await session.close();
     });
@@ -96,7 +96,7 @@ const boostrap = ({ client, pool }) => {
         await session.close();
       });
       next();
-    } catch (ex) {
+    } catch (err) {
       res.status(500).send(err);
     }
   });
