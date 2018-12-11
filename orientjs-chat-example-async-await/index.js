@@ -80,6 +80,7 @@ const listenForMessage = pool => {
       } catch (ex) {
         console.log(ex);
       }
+      await session.close();
     });
   });
 };
